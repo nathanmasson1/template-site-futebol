@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title">
+  <title id="title">Check-up preventivo</title>
+  <rect width="1200" height="720" fill="#f8fbf9"/>
+  <circle cx="1010" cy="146" r="128" fill="#fff1ed"/>
+  <circle cx="168" cy="564" r="130" fill="#bfdbfe" opacity="0.55"/>
+  <rect x="260" y="104" width="680" height="512" rx="38" fill="#ffffff" stroke="#d7e7e3" stroke-width="3"/>
+  <rect x="344" y="184" width="226" height="164" rx="26" fill="#ecfdf5"/>
+  <path d="M410 266h94M457 219v94" stroke="#0f766e" stroke-width="16" stroke-linecap="round"/>
+  <rect x="632" y="192" width="210" height="24" rx="12" fill="#bfdbfe"/>
+  <rect x="632" y="250" width="168" height="18" rx="9" fill="#d7e7e3"/>
+  <rect x="632" y="300" width="132" height="18" rx="9" fill="#d7e7e3"/>
+  <rect x="344" y="410" width="498" height="92" rx="26" fill="#102a43"/>
+  <path d="M390 456h70l28-42 40 82 34-48h82" fill="none" stroke="#5eead4" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="780" cy="456" r="24" fill="#f9735b"/>
+</svg>

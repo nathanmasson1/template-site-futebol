@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "label": "Início",
+      "href": "/",
+      "showCategories": false
+    },
+    {
+      "label": "Brasileirão",
+      "href": "/brasileirao/",
+      "showCategories": false
+    },
+    {
+      "label": "Análises",
+      "href": "/analises/",
+      "showCategories": false
+    },
+    {
+      "label": "Futebol Feminino",
+      "href": "/futebol-feminino/",
+      "showCategories": false
+    },
+    {
+      "label": "Categorias de Base",
+      "href": "/categorias-de-base/",
+      "showCategories": false
+    },
+    {
+      "label": "Sobre",
+      "href": "/sobre/",
+      "showCategories": false
+    }
+  ]
+}

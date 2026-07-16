@@ -1,0 +1,127 @@
+{
+  "hero": {
+    "badge": "Futebol brasileiro, todos os dias",
+    "title": "O Brasil entra em campo aqui",
+    "subtitle": "Análises, histórias e contexto para quem acompanha o futebol muito além dos noventa minutos.",
+    "ctaPrimary": {
+      "text": "Ver análises",
+      "href": "/blog/"
+    },
+    "ctaSecondary": {
+      "text": "Conheça a Central",
+      "href": "/sobre/"
+    },
+    "image": "/images/football-stadium.jpg",
+    "stats": [
+      {
+        "number": "Jogo",
+        "label": "o que acontece no campo"
+      },
+      {
+        "number": "Tática",
+        "label": "por que cada lance importa"
+      },
+      {
+        "number": "Torcida",
+        "label": "a voz que move o futebol"
+      }
+    ],
+    "featured": [
+      {
+        "tag": "Brasileirão",
+        "title": "Como os pontos corridos premiam regularidade",
+        "href": "/como-funciona-o-brasileirao-pontos-corridos/"
+      },
+      {
+        "tag": "Análise",
+        "title": "O que observar antes de julgar uma atuação",
+        "href": "/o-que-observar-em-uma-analise-tatica/"
+      },
+      {
+        "tag": "Futebol Feminino",
+        "title": "Estrutura, visibilidade e o futuro da modalidade",
+        "href": "/futebol-feminino-crescimento-no-brasil/"
+      }
+    ]
+  },
+  "socialProof": {
+    "stats": [
+      {
+        "number": "Campo",
+        "suffix": "",
+        "label": "leitura de jogo",
+        "detail": "movimentos, escolhas e detalhes táticos explicados com linguagem acessível"
+      },
+      {
+        "number": "Bola",
+        "suffix": "",
+        "label": "futebol brasileiro",
+        "detail": "clubes, competições e personagens vistos com contexto e responsabilidade"
+      },
+      {
+        "number": "Base",
+        "suffix": "",
+        "label": "formação de atletas",
+        "detail": "processos, oportunidades e desafios antes da chegada ao time profissional"
+      },
+      {
+        "number": "Voz",
+        "suffix": "",
+        "label": "cultura de torcida",
+        "detail": "arquibancada, memória e identidade como partes essenciais do espetáculo"
+      }
+    ],
+    "brands": [
+      "Brasileirão",
+      "Copa do Brasil",
+      "Libertadores",
+      "Sul-Americana",
+      "Futebol Feminino",
+      "Seleção",
+      "Categorias de Base",
+      "Tática"
+    ]
+  },
+  "postsGrid": {
+    "label": "Central do jogo",
+    "title": "Futebol para entender, sentir e debater",
+    "subtitle": "Conteúdos originais sobre o jogo, seus personagens e as transformações do futebol brasileiro.",
+    "limit": 9,
+    "ctaText": "Ver todos os conteúdos",
+    "ctaHref": "/blog/"
+  },
+  "about": {
+    "label": "Nossa cobertura",
+    "title": "Paixão de arquibancada",
+    "titleAccent": "com olhar de jornalista",
+    "text1": "A Central Brasileirão nasceu para aproximar o torcedor das ideias, histórias e decisões que constroem uma partida.",
+    "text2": "Informamos sem clubismo editorial, valorizamos diferentes vozes e tratamos o futebol feminino e as categorias de base como partes centrais do esporte.",
+    "imagePrimary": "/images/football-women.jpg",
+    "imageSecondary": "/images/football-youth.jpg",
+    "ctaPrimary": {
+      "text": "Conheça o projeto",
+      "href": "/sobre/"
+    },
+    "ctaSecondary": {
+      "text": "Fale com a redação",
+      "href": "/contato/"
+    },
+    "features": [
+      {
+        "number": "01",
+        "title": "Contexto antes do apito",
+        "description": "Explicamos o cenário para que cada jogo seja acompanhado com mais clareza."
+      },
+      {
+        "number": "02",
+        "title": "Análise sem complicação",
+        "description": "Traduzimos conceitos táticos sem perder profundidade nem transformar opinião em fato."
+      },
+      {
+        "number": "03",
+        "title": "Futebol por inteiro",
+        "description": "O esporte é feito por atletas, comissões, torcida, base, mulheres e muitas histórias."
+      }
+    ]
+  }
+}

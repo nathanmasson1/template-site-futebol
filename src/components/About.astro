@@ -1,0 +1,236 @@
+---
+import { withInternalTrailingSlash } from '../lib/urls';
+
+interface Props { data?: any; }
+const d = Astro.props.data || {};
+const label = d.label || 'Nossa cobertura';
+const title = d.title || 'Paixão de arquibancada';
+const titleAccent = d.titleAccent || 'com olhar de jornalista';
+const text1 = d.text1 || 'A Central Brasileirão aproxima o torcedor das ideias e histórias que constroem uma partida.';
+const text2 = d.text2 || 'Informação, análise e cultura esportiva com responsabilidade editorial.';
+const ctaPrimary = d.ctaPrimary || { text: 'Conheça o projeto', href: '/sobre/' };
+const ctaSecondary = d.ctaSecondary || { text: 'Fale com a redação', href: '/contato/' };
+const imagePrimary = d.imagePrimary || '/images/football-women.jpg';
+const imageSecondary = d.imageSecondary || '/images/football-youth.jpg';
+const features = d.features || [
+  { number: '01', title: 'Contexto', description: 'O cenário completo antes do apito.' },
+  { number: '02', title: 'Análise', description: 'Tática explicada com clareza.' },
+  { number: '03', title: 'Futebol inteiro', description: 'Campo, base, mulheres e torcida.' },
+];
+---
+
+<section class="about section" id="sobre">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-media animate-on-scroll">
+        <img class="about-image-main" src={imagePrimary} alt="Jogadoras em uma partida de futebol" loading="lazy" />
+        <img class="about-image-small" src={imageSecondary} alt="Jovens atletas em treinamento" loading="lazy" />
+      </div>
+
+      <div class="about-content animate-on-scroll">
+        <span class="section-label">{label}</span>
+        <h2 class="about-title">
+          {title}
+          <span class="about-title-accent">{titleAccent}</span>
+        </h2>
+        <p class="about-text">{text1}</p>
+        <p class="about-text">{text2}</p>
+        <div class="about-actions">
+          <a href={withInternalTrailingSlash(ctaPrimary.href)} class="btn btn-primary">
+            {ctaPrimary.text}
+            <span aria-hidden="true">→</span>
+          </a>
+          <a href={withInternalTrailingSlash(ctaSecondary.href)} class="btn btn-outline">{ctaSecondary.text}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-features stagger-children animate-on-scroll">
+      {features.map((feature) => (
+        <div class="about-feature">
+          <span class="about-feature-number">{feature.number}</span>
+          <div class="about-feature-content">
+            <h3 class="about-feature-title">{feature.title}</h3>
+            <p class="about-feature-text">{feature.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background:
+      linear-gradient(135deg, #fff 0%, var(--color-primary-surface) 100%);
+    overflow: hidden;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: var(--space-4xl);
+    align-items: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .about-media {
+    position: relative;
+    min-height: 520px;
+  }
+
+  .about-image-main,
+  .about-image-small {
+    position: absolute;
+    width: 76%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: var(--shadow-lg);
+    border: 8px solid #fff;
+    border-radius: var(--radius-lg);
+  }
+
+  .about-image-main {
+    left: 0;
+    top: 0;
+    aspect-ratio: 4 / 5;
+    height: 500px;
+  }
+
+  .about-image-small {
+    right: 0;
+    bottom: 0;
+    width: 58%;
+    aspect-ratio: 4 / 3;
+    height: 260px;
+  }
+
+  .about-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-4xl);
+    font-weight: 800;
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-xl);
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .about-title-accent {
+    display: block;
+    color: var(--color-primary);
+  }
+
+  .about-text {
+    font-size: var(--fs-md);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .about-feature {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 500ms var(--ease-out-expo) both;
+  }
+
+  .about-feature::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: var(--color-accent);
+  }
+
+  .about-feature:nth-child(2)::before { background: var(--color-primary); }
+
+  .about-feature:nth-child(3)::before {
+    background: var(--color-service);
+  }
+
+  .about-feature:hover {
+    background: var(--color-bg-pure);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .about-feature-number {
+    font-family: var(--font-display);
+    font-size: var(--fs-3xl);
+    color: rgba(15, 118, 110, 0.22);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .about-feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .about-feature-title {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-extrabold);
+  }
+
+  .about-feature-text {
+    font-size: var(--fs-sm);
+    color: var(--color-text-muted);
+    line-height: var(--lh-normal);
+  }
+
+  @media (max-width: 900px) {
+    .about-grid,
+    .about-features {
+      grid-template-columns: 1fr;
+    }
+
+    .about-media {
+      min-height: 420px;
+    }
+
+    .about-image-main {
+      height: 390px;
+    }
+
+    .about-image-small {
+      height: 210px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .about-media {
+      min-height: auto;
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .about-image-main,
+    .about-image-small {
+      position: static;
+      width: 100%;
+      height: 240px;
+    }
+  }
+</style>

@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="favicon-title">
+  <title id="favicon-title">Central Brasileirão</title>
+  <rect width="64" height="64" rx="13" fill="#071F16"/>
+  <path d="M13 10h38v29c0 8-7.8 13.3-19 17-11.2-3.7-19-9-19-17V10Z" fill="#C8FF3D"/>
+  <path d="M18 15h28v23c0 5.2-5.1 9.3-14 12.5C23.1 47.3 18 43.2 18 38V15Z" stroke="#071F16" stroke-width="2"/>
+  <text x="32" y="38" fill="#071F16" font-family="Arial Narrow, Arial, sans-serif" font-size="21" font-weight="900" text-anchor="middle">CB</text>
+</svg>

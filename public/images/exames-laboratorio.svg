@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title">
+  <title id="title">Exames laboratoriais</title>
+  <rect width="1200" height="720" fill="#ecfdf5"/>
+  <circle cx="184" cy="136" r="96" fill="#ccfbf1"/>
+  <circle cx="1040" cy="560" r="134" fill="#bfdbfe" opacity="0.65"/>
+  <rect x="252" y="126" width="696" height="468" rx="36" fill="#ffffff" stroke="#d7e7e3" stroke-width="3"/>
+  <rect x="338" y="212" width="120" height="294" rx="54" fill="#eff6ff" stroke="#93c5fd" stroke-width="12"/>
+  <rect x="352" y="382" width="92" height="110" rx="42" fill="#2563eb" opacity="0.72"/>
+  <rect x="540" y="198" width="80" height="324" rx="40" fill="#fff1ed" stroke="#f9735b" stroke-width="10"/>
+  <rect x="552" y="342" width="56" height="168" rx="28" fill="#f9735b" opacity="0.68"/>
+  <path d="M720 386c42-112 82-112 124-4 20 52 50 54 82 8" fill="none" stroke="#0f766e" stroke-width="18" stroke-linecap="round"/>
+  <path d="M704 236h182M704 282h138" stroke="#a8c5bf" stroke-width="18" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "title": "Política Editorial",
+  "intro": "A Central Brasileirão (https://www.centralbrasileirao.com.br/) é um site brasileiro de jornalismo esportivo dedicado ao futebol nacional.",
+  "content": [
+    {
+      "title": "1. Independência editorial",
+      "paragraphs": [
+        "Nossa cobertura é orientada pela relevância jornalística, pelo interesse do torcedor e pela responsabilidade com fatos e fontes.",
+        "O portal está sob responsabilidade da Redação Central Brasileirão."
+      ],
+      "items": [
+        "Diferenciamos notícia, análise e opinião.",
+        "Não aceitamos interferência de clubes, empresários, patrocinadores ou grupos de torcedores na apuração.",
+        "Conteúdos patrocinados e parcerias devem ser identificados com clareza."
+      ]
+    },
+    {
+      "title": "2. Cobertura do futebol",
+      "paragraphs": [
+        "Priorizamos o futebol brasileiro, incluindo competições nacionais, futebol feminino, categorias de base, tática, memória e cultura de torcida.",
+        "Rumores são tratados como rumores e nunca apresentados como informação confirmada."
+      ]
+    },
+    {
+      "title": "3. Checagem, correções e contato",
+      "paragraphs": [
+        "Buscamos confirmar informações relevantes e corrigir erros de forma transparente.",
+        "Responsável editorial: Redação Central Brasileirão",
+        "E-mail: contato@centralbrasileirao.com.br"
+      ]
+    }
+  ]
+}

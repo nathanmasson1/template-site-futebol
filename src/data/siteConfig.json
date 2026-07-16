@@ -1,0 +1,49 @@
+{
+  "name": "Central Brasileirão",
+  "description": "Jornalismo esportivo sobre o futebol brasileiro, com análises, contexto, bastidores e histórias de quem vive o jogo.",
+  "url": "https://www.centralbrasileirao.com.br/",
+  "author": "Redação Central Brasileirão",
+  "language": "pt-BR",
+  "logo": "/images/logo-central-brasileirao.svg",
+  "footerLogo": "",
+  "favicon": "/favicon.svg",
+  "logoMark": "CB",
+  "ctaText": "Fale com a redação",
+  "ctaHref": "/contato/",
+  "theme": {
+    "primary": "#0f6a43",
+    "accent": "#c8ff3d",
+    "font": "inter",
+    "dark": "#071f16"
+  },
+  "social": {
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "pinterest": "",
+    "youtube": ""
+  },
+  "contact": {
+    "email": "contato@centralbrasileirao.com.br",
+    "phone": "",
+    "address": "Brasil",
+    "name": "Redação Central Brasileirão"
+  },
+  "legal": {
+    "terms_last_updated": "16 de julho de 2026",
+    "privacy_last_updated": "16 de julho de 2026"
+  },
+  "phone": "",
+  "address": "Brasil",
+  "ai": {
+    "openaiKey": ""
+  },
+  "footer": {
+    "copyright": "© 2026 Central Brasileirão",
+    "description": "Futebol brasileiro com paixão, contexto e responsabilidade editorial."
+  },
+  "seo": {
+    "title": "Central Brasileirão",
+    "description": "A Central Brasileirão acompanha o futebol nacional com análises táticas, histórias, categorias de base, futebol feminino e a emoção das arquibancadas."
+  }
+}

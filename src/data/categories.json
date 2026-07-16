@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Brasileirão",
+    "slug": "brasileirao",
+    "description": "Contexto, histórias e leitura de jogo sobre a principal competição nacional de clubes."
+  },
+  {
+    "name": "Análises",
+    "slug": "analises",
+    "description": "Tática, desempenho, funções e movimentos para entender o futebol além do placar."
+  },
+  {
+    "name": "Futebol Feminino",
+    "slug": "futebol-feminino",
+    "description": "Cobertura, desenvolvimento e personagens que ampliam a força do futebol feminino brasileiro."
+  },
+  {
+    "name": "Categorias de Base",
+    "slug": "categorias-de-base",
+    "description": "Formação de atletas, metodologia, oportunidades e os caminhos até o futebol profissional."
+  }
+]

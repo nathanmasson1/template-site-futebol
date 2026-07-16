@@ -1,0 +1,36 @@
+{
+  "title": "Termos de Uso",
+  "intro": "Bem-vindo à Central Brasileirão (https://www.centralbrasileirao.com.br/). Ao acessar este portal, você concorda com estes Termos de Uso.",
+  "content": [
+    {
+      "title": "1. Uso do conteúdo",
+      "paragraphs": [
+        "Textos, marcas, layouts e materiais publicados pertencem à Central Brasileirão ou a seus licenciantes, salvo indicação em contrário."
+      ],
+      "items": [
+        "É permitido compartilhar links públicos para nossas páginas.",
+        "Citações curtas devem indicar a Central Brasileirão e incluir link para a publicação original.",
+        "A reprodução integral depende de autorização."
+      ]
+    },
+    {
+      "title": "2. Informações esportivas",
+      "paragraphs": [
+        "Escalações, horários, regulamentos, transferências e demais informações esportivas podem mudar. Conteúdos jornalísticos não substituem comunicados de clubes, federações e organizadores."
+      ]
+    },
+    {
+      "title": "3. Links externos",
+      "paragraphs": [
+        "Links externos levam a serviços de terceiros, cujas políticas, disponibilidade e segurança não são controladas pela Central Brasileirão."
+      ]
+    },
+    {
+      "title": "4. Contato",
+      "paragraphs": [
+        "E-mail: contato@centralbrasileirao.com.br",
+        "Endereço editorial: Brasil"
+      ]
+    }
+  ]
+}

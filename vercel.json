@@ -1,0 +1,36 @@
+{
+  "trailingSlash": true,
+  "crons": [
+    {
+      "path": "/api/cron/publish-scheduled",
+      "schedule": "0 20 * * *"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/embed/tabelaAtual/brasileirao2010/606",
+      "destination": "/tabela-do-campeonato-brasileiro-2010-classificacao-atual/",
+      "permanent": true
+    },
+    {
+      "source": "/palmeiras/futebol/campeonato-brasileiro-2008/jogo/467/palmeiras-5-x-2-cruzeiro",
+      "destination": "/palmeiras-5-x-2-cruzeiro-campeonato-brasileiro-2008/",
+      "permanent": true
+    },
+    {
+      "source": "/brasileirao2011/jogo/4201/ceara-x-santos",
+      "destination": "/ceara-x-santos-campeonato-brasileiro-2011/",
+      "permanent": true
+    },
+    {
+      "source": "/brasileirao2009/jogo/1289/cruzeiro-x-fluminense",
+      "destination": "/cruzeiro-x-fluminense-campeonato-brasileiro-2009/",
+      "permanent": true
+    },
+    {
+      "source": "/2015/03/18/dispensado-pelo-boa-luiz-eduardo-volta-a-ser-artilheiro-na-caldense",
+      "destination": "/dispensado-pelo-boa-luiz-eduardo-volta-a-ser-artilheiro-na-caldense/",
+      "permanent": true
+    }
+  ]
+}

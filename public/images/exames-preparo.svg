@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title">
+  <title id="title">Preparo para exames</title>
+  <rect width="1200" height="720" fill="#fff1ed"/>
+  <circle cx="1032" cy="564" r="126" fill="#ccfbf1"/>
+  <rect x="268" y="94" width="664" height="532" rx="38" fill="#ffffff" stroke="#d7e7e3" stroke-width="3"/>
+  <rect x="354" y="172" width="140" height="174" rx="26" fill="#eff6ff" stroke="#93c5fd" stroke-width="8"/>
+  <path d="M390 260h68M424 226v68" stroke="#2563eb" stroke-width="12" stroke-linecap="round"/>
+  <rect x="560" y="178" width="232" height="24" rx="12" fill="#a8c5bf"/>
+  <rect x="560" y="238" width="274" height="18" rx="9" fill="#eef8f6"/>
+  <rect x="560" y="286" width="210" height="18" rx="9" fill="#eef8f6"/>
+  <rect x="350" y="410" width="470" height="54" rx="18" fill="#ecfdf5"/>
+  <path d="M386 436l28 28 54-66" fill="none" stroke="#0f766e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="508" y="430" width="210" height="14" rx="7" fill="#a8c5bf"/>
+  <rect x="350" y="500" width="374" height="54" rx="18" fill="#eff6ff"/>
+  <path d="M386 526l28 28 54-66" fill="none" stroke="#2563eb" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="508" y="520" width="154" height="14" rx="7" fill="#93c5fd"/>
+</svg>

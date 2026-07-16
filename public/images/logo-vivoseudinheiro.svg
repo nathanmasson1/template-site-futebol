@@ -1,0 +1,11 @@
+<svg width="430" height="96" viewBox="0 0 430 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Vivo Seu Dinheiro</title>
+  <desc id="logo-desc">Logo editorial do Vivo Seu Dinheiro</desc>
+  <rect x="8" y="13" width="70" height="70" rx="12" fill="#0f766e"/>
+  <path d="M31 30.5L43 63.5L55 30.5" stroke="#f7f9f2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M57 29V67" stroke="#f2c94c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M51 39.5H63" stroke="#f2c94c" stroke-width="5" stroke-linecap="round"/>
+  <path d="M51 56.5H63" stroke="#f2c94c" stroke-width="5" stroke-linecap="round"/>
+  <text x="96" y="43" fill="#0b1f22" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="0">Vivo Seu</text>
+  <text x="96" y="75" fill="#0f766e" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="0">Dinheiro</text>
+</svg>

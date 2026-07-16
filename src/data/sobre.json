@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "Sobre a Central Brasileirão",
+    "description": "Conheça a Central Brasileirão, um site de jornalismo esportivo dedicado ao futebol brasileiro.",
+    "image": "/images/football-fans.jpg"
+  },
+  "hero": {
+    "label": "Sobre a Central",
+    "title": "Futebol é notícia, memória",
+    "titleAccent": "e identidade brasileira",
+    "paragraphs": [
+      "A Central Brasileirão acompanha o futebol como ele é vivido: dentro do campo, nas arquibancadas, nos centros de treinamento e nas conversas entre torcedores.",
+      "Nossa proposta é unir informação, análise e cultura esportiva em conteúdos claros, responsáveis e independentes."
+    ],
+    "stats": [
+      { "number": "100%", "label": "futebol brasileiro" },
+      { "number": "360°", "label": "visão do jogo" },
+      { "number": "Sempre", "label": "com contexto" }
+    ]
+  },
+  "mission": {
+    "label": "Nossa missão",
+    "title": "Ajudar o torcedor a enxergar além do placar",
+    "subtitle": "Cada conteúdo procura explicar o jogo, preservar sua memória e dar espaço a diferentes personagens do futebol.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Precisão",
+        "text": "Separamos informação, análise e opinião, corrigindo erros de forma transparente."
+      },
+      {
+        "number": "02",
+        "title": "Contexto",
+        "text": "Um resultado conta apenas parte da história; mostramos escolhas, processos e consequências."
+      },
+      {
+        "number": "03",
+        "title": "Pluralidade",
+        "text": "O futebol brasileiro é nacional, regional, feminino, formador e popular. Nossa pauta reflete essa diversidade."
+      },
+      {
+        "number": "04",
+        "title": "Respeito",
+        "text": "Paixão não precisa virar intolerância. Mantemos uma cobertura firme, humana e responsável."
+      }
+    ]
+  },
+  "values": [
+    {
+      "title": "Informação sem clubismo editorial",
+      "text": "A torcida faz parte do futebol, mas a apuração deve ser guiada por fatos e critérios claros."
+    },
+    {
+      "title": "Análise que o leitor acompanha",
+      "text": "Usamos conceitos táticos com exemplos e linguagem direta, sem transformar o jogo em um manual inacessível."
+    },
+    {
+      "title": "Espaço para o futebol inteiro",
+      "text": "Futebol feminino, base, clubes de diferentes regiões e cultura de arquibancada têm lugar central."
+    }
+  ],
+  "cta": {
+    "title": "Quer conversar sobre futebol?",
+    "text": "Envie uma pauta, uma correção, uma história ou uma sugestão para a Redação Central Brasileirão.",
+    "ctaPrimary": { "text": "Falar com a redação", "href": "/contato/" },
+    "ctaSecondary": { "text": "Ler os conteúdos", "href": "/blog/" }
+  }
+}

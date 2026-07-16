@@ -1,0 +1,70 @@
+{
+  "seo": {
+    "title": "Contato",
+    "description": "Entre em contato com a Redação Central Brasileirão para enviar pautas, correções e histórias do futebol brasileiro.",
+    "image": "/images/football-fans.jpg"
+  },
+  "hero": {
+    "label": "Contato",
+    "title": "Entre em campo",
+    "titleAccent": "com a nossa redação",
+    "subtitle": "Sugestões, histórias, correções e boas conversas sobre futebol são sempre bem-vindas."
+  },
+  "methods": [
+    {
+      "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"/><polyline points=\"22,6 12,13 2,6\"/></svg>",
+      "title": "E-mail da redação",
+      "detail": "contato@centralbrasileirao.com.br",
+      "description": "Envie pautas, documentos, correções ou propostas editoriais."
+    },
+    {
+      "icon": "<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7h-7.5l-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z\"/><path d=\"M8 13h8\"/><path d=\"M8 16h5\"/></svg>",
+      "title": "Sugestões de pauta",
+      "detail": "clubes, atletas e projetos",
+      "description": "Recebemos histórias de todo o país, do futebol profissional às categorias de base."
+    }
+  ],
+  "form": {
+    "title": "Envie uma mensagem",
+    "subtitle": "Conte o assunto com clareza e inclua links ou fontes quando possível.",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "seu@email.com",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Selecione um assunto",
+    "subjects": [
+      { "value": "pauta", "label": "Sugestão de pauta" },
+      { "value": "correcao", "label": "Correção de informação" },
+      { "value": "entrevista", "label": "Sugestão de entrevista" },
+      { "value": "clube", "label": "História de clube ou projeto" },
+      { "value": "parceria", "label": "Proposta de parceria" },
+      { "value": "outro", "label": "Outro assunto" }
+    ],
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Explique a pauta, informe nomes, datas, cidade, competição e links oficiais...",
+    "submitText": "Enviar mensagem",
+    "successText": "Mensagem enviada!"
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "q": "Posso sugerir uma pauta sobre um clube local?",
+        "a": "Sim. Envie contexto, localização, fontes, contatos e o motivo pelo qual a história merece ser conhecida."
+      },
+      {
+        "q": "Como pedir uma correção?",
+        "a": "Informe o link da publicação, o trecho questionado e a fonte correta para contato@centralbrasileirao.com.br."
+      },
+      {
+        "q": "A Central publica conteúdo patrocinado?",
+        "a": "Parcerias comerciais podem existir, mas devem ser identificadas com clareza e não alteram os critérios da cobertura editorial."
+      },
+      {
+        "q": "Posso enviar fotos e documentos?",
+        "a": "Sim, desde que você tenha autorização para compartilhar o material e informe a autoria e o contexto de uso."
+      }
+    ]
+  }
+}

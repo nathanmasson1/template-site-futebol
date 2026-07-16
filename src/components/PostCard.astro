@@ -1,0 +1,196 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  image?: string;
+  imageAlt?: string;
+  category: string;
+  slug: string;
+  rating?: number;
+  badge?: string;
+  priceRange?: string;
+}
+
+const { title, description, pubDate, image, imageAlt, category, slug } = Astro.props;
+
+const categoryLabels: Record<string, string> = {
+  'brasileirao': 'Brasileirão',
+  'analises': 'Análises',
+  'futebol-feminino': 'Futebol Feminino',
+  'categorias-de-base': 'Categorias de Base',
+};
+
+const categoryColors: Record<string, string> = {
+  'brasileirao': '#0f6a43',
+  'analises': '#071f16',
+  'futebol-feminino': '#b0468e',
+  'categorias-de-base': '#d18a00',
+};
+
+const formattedDate = pubDate.toLocaleDateString('pt-BR', {
+  day: '2-digit',
+  month: 'short',
+  year: 'numeric',
+});
+---
+
+<article class="post-card animate-on-scroll" style={`--category-color:${categoryColors[category] || '#0f6a43'}`}>
+  <a href={`/${slug}/`} class="post-card-link">
+    <div class="post-card-image">
+      {image ? (
+        <img src={image} alt={imageAlt || title} loading="lazy" width="800" height="520" />
+      ) : (
+        <div class="post-card-placeholder"><span>CB</span></div>
+      )}
+      <span class="post-card-category">{categoryLabels[category] || category}</span>
+    </div>
+
+    <div class="post-card-body">
+      <div class="post-card-meta">
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        <span>Leitura esportiva</span>
+      </div>
+      <h3 class="post-card-title">{title}</h3>
+      <p class="post-card-excerpt">{description}</p>
+      <div class="post-card-footer">
+        <span>Leia a análise</span>
+        <b aria-hidden="true">→</b>
+      </div>
+    </div>
+  </a>
+</article>
+
+<style>
+  .post-card {
+    animation: fadeInUp 520ms var(--ease-out-expo) both;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-top: 5px solid var(--category-color);
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .post-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-7px);
+  }
+
+  .post-card-link {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .post-card-link:hover { color: inherit; }
+
+  .post-card-image {
+    aspect-ratio: 16 / 10;
+    background: var(--color-bg-dark);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .post-card-image::after {
+    background: linear-gradient(180deg, transparent 50%, rgba(4, 21, 15, 0.72));
+    content: '';
+    inset: 0;
+    position: absolute;
+  }
+
+  .post-card-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 700ms var(--ease-out-expo), filter 500ms ease;
+    width: 100%;
+  }
+
+  .post-card:hover .post-card-image img { filter: saturate(1.08); transform: scale(1.055); }
+
+  .post-card-placeholder {
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-bg-dark));
+    color: var(--color-accent);
+    display: flex;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .post-card-category {
+    background: var(--color-accent);
+    bottom: 0;
+    color: var(--color-accent-dark);
+    font-size: 0.65rem;
+    font-weight: 800;
+    left: 0;
+    letter-spacing: var(--ls-wider);
+    padding: 0.5rem 0.75rem;
+    position: absolute;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .post-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--space-lg);
+  }
+
+  .post-card-meta {
+    align-items: center;
+    color: var(--color-text-faint);
+    display: flex;
+    font-size: 0.67rem;
+    font-weight: 700;
+    justify-content: space-between;
+    letter-spacing: var(--ls-wide);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+  }
+
+  .post-card-title {
+    font-size: clamp(1.65rem, 3vw, 2.05rem);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    transition: color var(--transition-fast);
+  }
+
+  .post-card:hover .post-card-title { color: var(--color-primary); }
+
+  .post-card-excerpt {
+    color: var(--color-text-muted);
+    display: -webkit-box;
+    font-size: var(--fs-sm);
+    line-height: 1.65;
+    margin-bottom: var(--space-lg);
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .post-card-footer {
+    align-items: center;
+    border-top: 1px solid var(--color-border-light);
+    color: var(--color-primary);
+    display: flex;
+    font-size: 0.68rem;
+    font-weight: 800;
+    justify-content: space-between;
+    letter-spacing: var(--ls-wider);
+    margin-top: auto;
+    padding-top: var(--space-md);
+    text-transform: uppercase;
+  }
+
+  .post-card-footer b { font-size: 1.15rem; transition: transform var(--transition-fast); }
+  .post-card:hover .post-card-footer b { transform: translateX(5px); }
+</style>

@@ -1,0 +1,15 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Vitrine de negócios</title>
+  <desc id="desc">Painel com gráfico, cartão de negócio e destaque de serviço.</desc>
+  <rect width="1200" height="720" fill="#F8FBFF"/>
+  <rect x="90" y="88" width="1020" height="544" rx="36" fill="#FFFBEB"/>
+  <rect x="150" y="150" width="430" height="410" rx="30" fill="#FFFFFF"/>
+  <rect x="204" y="222" width="96" height="96" rx="24" fill="#075985"/>
+  <path d="M224 270h56M252 242v56" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <path d="M204 380h270M204 432h210M204 484h150" stroke="#334155" stroke-width="22" stroke-linecap="round"/>
+  <rect x="650" y="150" width="390" height="410" rx="30" fill="#0F172A"/>
+  <rect x="716" y="416" width="54" height="76" rx="12" fill="#38BDF8"/>
+  <rect x="806" y="348" width="54" height="144" rx="12" fill="#F59E0B"/>
+  <rect x="896" y="270" width="54" height="222" rx="12" fill="#16A34A"/>
+  <path d="M716 250h220M716 302h154" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/>
+</svg>

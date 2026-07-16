@@ -1,0 +1,10 @@
+<svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Central Brasileirão</title>
+  <desc id="logo-desc">Escudo verde-limão com as letras CB e o nome Central Brasileirão.</desc>
+  <rect width="360" height="96" rx="18" fill="#071F16"/>
+  <path d="M18 16H76V55C76 68.2 64.1 77.7 47 84C29.9 77.7 18 68.2 18 55V16Z" fill="#C8FF3D"/>
+  <path d="M25 23H69V53.6C69 62.2 61.2 69.5 47 75.2C32.8 69.5 25 62.2 25 53.6V23Z" stroke="#071F16" stroke-width="2.5"/>
+  <text x="47" y="55" fill="#071F16" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" text-anchor="middle">CB</text>
+  <text x="94" y="42" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="900" letter-spacing="2.5">CENTRAL</text>
+  <text x="93" y="70" fill="#C8FF3D" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900" letter-spacing="-0.4">BRASILEIRÃO</text>
+</svg>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import SocialProof from '../components/SocialProof.astro';
+import PostsGrid from '../components/PostsGrid.astro';
+import About from '../components/About.astro';
+import { readData } from '../lib/readData';
+
+const home = readData('home.json');
+---
+
+<BaseLayout
+  title="Home"
+  description="A Central Brasileirão acompanha o futebol nacional com análises, histórias, categorias de base e futebol feminino."
+  image="/og.png"
+>
+  <Hero data={home.hero} />
+  <SocialProof data={home.socialProof} />
+  <PostsGrid data={home.postsGrid} />
+  <About data={home.about} />
+</BaseLayout>

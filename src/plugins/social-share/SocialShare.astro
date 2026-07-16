@@ -1,0 +1,197 @@
+---
+/**
+ * SocialShare.astro — Plugin Social Share
+ *
+ * Renderiza título + botões de compartilhamento com URLs funcionais.
+ * Lê configurações de pluginsConfig.socialShare.
+ */
+import { readData } from '../../lib/readData';
+
+interface Props {
+  title?: string;
+  context?: 'post-bottom' | 'author-box';
+}
+
+const { title = '', context = 'post-bottom' } = Astro.props;
+
+const pluginsConfig = readData('pluginsConfig.json', {}) as any;
+const shareConfig = pluginsConfig?.socialShare;
+const enabled = shareConfig?.enabled !== false;
+const style = shareConfig?.style || 'icon';
+const sectionTitle: string = shareConfig?.sectionTitle || 'Compartilhe nas redes sociais';
+const platforms: string[] = shareConfig?.platforms || [
+  'facebook', 'twitter', 'whatsapp', 'linkedin', 'telegram', 'copy'
+];
+
+const platformDefs: Record<string, { icon: string; label: string }> = {
+  facebook:  { icon: 'f',    label: 'Facebook'  },
+  twitter:   { icon: 'X',    label: 'Twitter/X' },
+  whatsapp:  { icon: 'W',    label: 'WhatsApp'  },
+  linkedin:  { icon: 'in',   label: 'LinkedIn'  },
+  telegram:  { icon: 'T',    label: 'Telegram'  },
+  pinterest: { icon: 'P',    label: 'Pinterest' },
+  copy:      { icon: 'Cop',  label: 'Copiar'    },
+};
+
+const activePlatforms = platforms.filter(p => platformDefs[p]);
+---
+
+{enabled && activePlatforms.length > 0 && (
+  <div class="walker-share-wrap" data-context={context}>
+    {sectionTitle && (
+      <p class="walker-share-title">{sectionTitle}</p>
+    )}
+    <ul
+      class="social-icons list-unstyled list-inline mb-0 walker-share-list"
+      data-style={style}
+    >
+      {activePlatforms.map(p => {
+        const def = platformDefs[p];
+        return (
+          <li class="list-inline-item" data-platform={p}>
+            <a href="#" class="walker-share-btn" aria-label={`Compartilhar no ${def.label}`} title={def.label}>
+              <span class="share-icon" aria-hidden="true">{def.icon}</span>
+              {(style === 'label' || style === 'both') && (
+                <span class="share-label ms-1">{def.label}</span>
+              )}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
+
+<style>
+  .walker-share-wrap {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .walker-share-wrap[data-context="post-bottom"] {
+    align-items: flex-end;
+  }
+
+  .walker-share-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8f9bac;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .walker-share-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .walker-share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.35rem;
+    min-height: 2.35rem;
+    gap: 0.45rem;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--color-border-light, #eadfd8);
+    border-radius: var(--radius-md, 8px);
+    background: var(--color-bg-pure, #fff);
+    color: var(--color-primary, #9f6f6a);
+    box-shadow: var(--shadow-xs, 0 1px 2px rgba(60, 52, 49, 0.04));
+    text-decoration: none;
+    transition: transform var(--transition-fast, 200ms ease), border-color var(--transition-fast, 200ms ease), background var(--transition-fast, 200ms ease);
+  }
+
+  .walker-share-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-primary-lighter, #f1cbc5);
+    background: var(--color-primary-surface, #fff0ed);
+    color: var(--color-primary, #9f6f6a);
+  }
+
+  .share-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .share-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1;
+    color: inherit;
+  }
+
+  .walker-share-list[data-style="label"] .share-icon {
+    display: none;
+  }
+</style>
+
+<script>
+(function() {
+  function initShareButtons() {
+    var lists = document.querySelectorAll('.walker-share-list');
+    lists.forEach(function(list) {
+      var pageUrl = encodeURIComponent(window.location.href);
+      var pageTitle = encodeURIComponent(document.title);
+      var btns = list.querySelectorAll('.walker-share-btn');
+      btns.forEach(function(btn) {
+        var li = btn.closest('[data-platform]') as HTMLElement;
+        var platform = li?.dataset.platform;
+        if (!platform) return;
+
+        var urls: Record<string, string> = {
+          facebook:  'https://www.facebook.com/sharer/sharer.php?u=' + pageUrl,
+          twitter:   'https://twitter.com/intent/tweet?url=' + pageUrl + '&text=' + pageTitle,
+          whatsapp:  'https://wa.me/?text=' + pageTitle + '%20' + pageUrl,
+          linkedin:  'https://www.linkedin.com/sharing/share-offsite/?url=' + pageUrl,
+          telegram:  'https://t.me/share/url?url=' + pageUrl + '&text=' + pageTitle,
+          pinterest: 'https://pinterest.com/pin/create/button/?url=' + pageUrl,
+          copy:      'copy',
+        };
+
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var url = urls[platform!];
+          if (url === 'copy') {
+            navigator.clipboard?.writeText(window.location.href).then(function() {
+              var label = (btn as HTMLElement).querySelector('.share-label');
+              var icon = (btn as HTMLElement).querySelector('.share-icon');
+              var original = label ? label.textContent : null;
+              var originalIcon = icon ? icon.textContent : null;
+              if (label) label.textContent = 'Copiado!';
+              if (icon && !label) {
+                icon.textContent = 'OK';
+                setTimeout(function() { if (icon && originalIcon) icon.textContent = originalIcon; }, 2000);
+              }
+              setTimeout(function() { if (label) label.textContent = original; }, 2000);
+            });
+          } else {
+            window.open(url, '_blank', 'noopener,width=600,height=450');
+          }
+        });
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initShareButtons);
+  } else {
+    initShareButtons();
+  }
+})();
+</script>

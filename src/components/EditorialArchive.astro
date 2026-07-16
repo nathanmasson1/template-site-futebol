@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from './PostCard.astro';
+import { getCollection } from 'astro:content';
+import { isPostPublic } from '../lib/postVisibility';
+import categoriesRaw from '../data/categories.json';
+
+interface Props {
+  category?: string;
+}
+
+const { category = '' } = Astro.props;
+const categories = categoriesRaw as Array<{ name: string; slug: string; description?: string }>;
+const categoryBySlug = Object.fromEntries(categories.map((item) => [item.slug, item]));
+const selectedCategory = category ? categoryBySlug[category] : undefined;
+
+const allPosts = (await getCollection('blog', ({ data }) => isPostPublic(data)))
+  .filter((post) => categoryBySlug[post.data.category])
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const posts = selectedCategory
+  ? allPosts.filter((post) => post.data.category === selectedCategory.slug)
+  : allPosts;
+
+const pageTitle = selectedCategory?.name || 'Central do Jogo';
+const pageDescription = selectedCategory?.description || 'Análises, histórias e contexto sobre o futebol brasileiro.';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} image="/og.png">
+  <section class="blog-hero">
+    <div class="blog-hero-bg"></div>
+    <div class="container blog-hero-inner">
+      <span class="section-label">Central Brasileirão</span>
+      <h1 class="blog-hero-title">
+        {pageTitle}
+        <span class="blog-hero-accent">
+          {selectedCategory ? 'uma editoria da Central' : 'o futebol brasileiro por inteiro'}
+        </span>
+      </h1>
+      <p class="section-subtitle">{pageDescription}</p>
+    </div>
+  </section>
+
+  <section class="blog-posts section">
+    <div class="container">
+      <nav class="category-tabs" aria-label="Editorias da Central Brasileirão">
+        <a href="/blog/" class:list={['category-tab', { active: !selectedCategory }]}>Todas</a>
+        {categories.map((item) => (
+          <a
+            href={`/${item.slug}/`}
+            class:list={['category-tab', { active: selectedCategory?.slug === item.slug }]}
+          >
+            {item.name}
+          </a>
+        ))}
+      </nav>
+
+      {posts.length > 0 ? (
+        <div class="blog-grid stagger-children">
+          {posts.map((post) => (
+            <PostCard
+              title={post.data.title}
+              description={post.data.description}
+              pubDate={post.data.pubDate}
+              image={post.data.image}
+              imageAlt={post.data.imageAlt}
+              category={post.data.category}
+              slug={post.id}
+              rating={post.data.rating}
+              badge={post.data.badge}
+              priceRange={post.data.priceRange}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="empty-state">Nenhum conteúdo publicado nesta editoria ainda.</p>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    color: #fff;
+    overflow: hidden;
+    padding: calc(var(--navbar-height) + var(--space-4xl)) 0 var(--space-4xl);
+    position: relative;
+    text-align: center;
+  }
+
+  .blog-hero-bg {
+    background:
+      linear-gradient(90deg, rgba(4, 21, 15, 0.96), rgba(4, 21, 15, 0.58)),
+      url('/images/football-fans.jpg') center 52% / cover;
+    inset: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .blog-hero .section-label {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.28);
+    color: #fff;
+  }
+
+  .blog-hero .section-label::before { background: var(--color-accent); }
+
+  .blog-hero-title {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: var(--fs-5xl);
+    font-weight: var(--fw-extrabold);
+    letter-spacing: 0;
+    line-height: 0.92;
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+  }
+
+  .blog-hero-accent {
+    color: var(--color-accent);
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: var(--ls-widest);
+    margin-top: var(--space-md);
+    text-transform: uppercase;
+  }
+
+  .blog-hero .section-subtitle { color: rgba(255, 255, 255, 0.92); }
+
+  .category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .category-tab {
+    border: 1px solid rgba(20, 45, 62, 0.16);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--ls-wide);
+    padding: 0.72rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .category-tab:hover,
+  .category-tab.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent-dark);
+    color: var(--color-accent-dark);
+  }
+
+  .blog-grid {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .empty-state {
+    background: var(--color-bg-warm);
+    border: 1px solid rgba(20, 45, 62, 0.12);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: var(--fs-lg);
+    padding: var(--space-xl);
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>

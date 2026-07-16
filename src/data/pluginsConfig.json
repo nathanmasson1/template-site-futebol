@@ -1,0 +1,36 @@
+{
+    "googleTag": {
+        "settings": {
+            "orgName": "Central Brasileirão",
+            "orgLogo": ""
+        }
+    },
+    "ai": {
+        "provider": "openai",
+        "apiKey": "",
+        "openaiApiKey": "",
+        "geminiApiKey": "",
+        "pexelsApiKey": ""
+    },
+    "seo": {
+        "enabled": true,
+        "orgName": "Central Brasileirão",
+        "orgLogo": "/images/logo-central-brasileirao.svg",
+        "sameAs": [],
+        "articleSchema": true,
+        "breadcrumbSchema": true,
+        "websiteSchema": true
+    },
+    "socialShare": {
+        "enabled": true,
+        "sectionTitle": "Compartilhe nas redes sociais",
+        "platforms": [
+            "facebook",
+            "twitter",
+            "whatsapp",
+            "linkedin",
+            "telegram"
+        ],
+        "style": "icon"
+    }
+}

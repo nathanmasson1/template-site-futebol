@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Renegociação de dívidas</title>
+  <desc id="desc">Imagem editorial sobre Dívidas para o site Juros mais baixos no Brasil.</desc>
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <rect x="0" y="0" width="1200" height="720" fill="#dc2626" opacity=".09"/>
+  <path d="M0 560C180 500 270 590 430 520C640 428 775 390 965 450C1070 483 1140 470 1200 420V720H0Z" fill="#dc2626" opacity=".16"/>
+  <rect x="86" y="88" width="520" height="460" rx="32" fill="#fff" stroke="#d6e6e2"/>
+  <rect x="142" y="150" width="260" height="24" rx="12" fill="#dc2626"/>
+  <rect x="142" y="216" width="360" height="16" rx="8" fill="#10231a" opacity=".18"/>
+  <rect x="142" y="264" width="300" height="16" rx="8" fill="#10231a" opacity=".14"/>
+  <rect x="142" y="340" width="340" height="90" rx="18" fill="#d7f9ef"/>
+  <text x="170" y="397" fill="#10231a" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">Dívidas</text>
+  <g transform="translate(690 126)">
+    <circle cx="190" cy="190" r="160" fill="#f2c14e" opacity=".52"/>
+    <path d="M96 260h310" stroke="#10231a" stroke-width="28" stroke-linecap="round" opacity=".18"/>
+    <path d="M96 260h205" stroke="#dc2626" stroke-width="28" stroke-linecap="round"/>
+    <path d="M130 330h250" stroke="#10231a" stroke-width="22" stroke-linecap="round" opacity=".16"/>
+    <path d="M130 330h150" stroke="#f2c14e" stroke-width="22" stroke-linecap="round"/>
+    <text x="84" y="208" fill="#10231a" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="950">R$</text>
+  </g>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="92" viewBox="0 0 420 92" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Juros mais baixos no Brasil</title>
+  <desc id="logo-desc">Logo editorial do site Juros mais baixos no Brasil, especializado em crédito, juros e educação financeira.</desc>
+  <rect width="420" height="92" fill="none"/>
+  <g transform="translate(8 12)">
+    <rect x="0" y="0" width="68" height="68" rx="14" fill="#d7f9ef"/>
+    <path d="M18 43h32" stroke="#0f2e2a" stroke-width="7" stroke-linecap="round"/>
+    <path d="M22 30h24" stroke="#0f2e2a" stroke-width="7" stroke-linecap="round"/>
+    <path d="M27 17h14" stroke="#0f2e2a" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="51" cy="18" r="5" fill="#f2c14e"/>
+  </g>
+  <text x="92" y="37" fill="#f8fafc" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">Juros mais baixos</text>
+  <text x="93" y="62" fill="#d7f9ef" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" letter-spacing="3">NO BRASIL</text>
+</svg>

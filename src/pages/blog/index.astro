@@ -1,0 +1,14 @@
+---
+import EditorialArchive from '../../components/EditorialArchive.astro';
+---
+
+<EditorialArchive />
+
+<script is:inline>
+  const legacyCategory = new URLSearchParams(window.location.search).get('cat')?.trim().toLowerCase();
+  const categoryRoutes = ['brasileirao', 'analises', 'futebol-feminino', 'categorias-de-base'];
+
+  if (legacyCategory && categoryRoutes.includes(legacyCategory)) {
+    window.location.replace(`/${legacyCategory}/`);
+  }
+</script>
