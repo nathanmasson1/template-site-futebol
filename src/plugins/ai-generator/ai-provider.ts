@@ -41,7 +41,7 @@ export function loadAISettings(): AISettings {
         return {
             provider,
             apiKey: providerApiKey,
-            pexelsApiKey: ai.pexelsApiKey || '',
+            pexelsApiKey: ai.pexelsApiKey || (process.env.PEXELS_API_KEY || '').trim(),
         };
     } catch {
         return { provider: 'gemini', apiKey: '' };
