@@ -28,7 +28,6 @@ const emptyRedirect = (): Omit<Redirect, 'id'> => ({
 
 export default function RedirectsManager() {
   const [redirects, setRedirects] = useState<Redirect[]>([]);
-  const [fileSha, setFileSha] = useState('');
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
@@ -52,7 +51,7 @@ export default function RedirectsManager() {
     } catch {
       // fetch with redirect:'manual' may fail due to CORS, try alternative
       try {
-        const res = await fetch(`/api/admin/plugins/redirects/test?path=${encodeURIComponent(r.from)}`);
+        const res = await fetch(`/api/admin/plugins/redirects/test/?path=${encodeURIComponent(r.from)}`);
         if (res.ok) {
           const data = await res.json();
           setTestResult(prev => ({ ...prev, [r.id]: data }));
@@ -70,12 +69,17 @@ export default function RedirectsManager() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/admin/plugins/redirects');
+        const res = await fetch('/api/admin/plugins/redirects/');
         if (res.ok) {
           const arr = await res.json();
           setRedirects(Array.isArray(arr) ? arr : []);
+        } else {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Falha ao carregar redirecionamentos');
         }
-      } catch {}
+      } catch (err: any) {
+        setError(err.message || 'Falha ao carregar redirecionamentos');
+      }
       setLoading(false);
     })();
   }, []);
@@ -84,7 +88,7 @@ export default function RedirectsManager() {
     setSaving(true);
     setError('');
     try {
-      const res = await fetch('/api/admin/plugins/redirects', {
+      const res = await fetch('/api/admin/plugins/redirects/', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newList),
@@ -93,8 +97,10 @@ export default function RedirectsManager() {
         const data = await res.json();
         throw new Error(data.error || 'Falha ao salvar');
       }
-      setRedirects(newList);
-      const ativos = newList.filter(r => r.enabled).length;
+      const data = await res.json();
+      const savedList = Array.isArray(data.redirects) ? data.redirects : newList;
+      setRedirects(savedList);
+      const ativos = savedList.filter((r: Redirect) => r.enabled).length;
       triggerToast(`${ativos} redirect${ativos !== 1 ? 's' : ''} ativo${ativos !== 1 ? 's' : ''} — sincronizado com Vercel!`, 'success', 100);
     } catch (err: any) {
       setError(err.message);
