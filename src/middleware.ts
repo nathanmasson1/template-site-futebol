@@ -28,6 +28,7 @@ function getRedirects(): any[] {
 
 export const onRequest = defineMiddleware(async (context, next) => {
     const { pathname } = context.url;
+    const routePath = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 
     // Check redirects for all public routes (before admin check)
     if (!pathname.startsWith('/admin') && !pathname.startsWith('/api/')) {
@@ -65,7 +66,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
     // Sem ADMIN_SECRET configurado → aviso
     if (!ADMIN_SECRET) {
-        if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+        if (routePath === '/admin' || routePath.startsWith('/admin/')) {
             return new Response(`
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -86,12 +87,12 @@ code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-size:.875rem;colo
     }
 
     // /admin/login → pass through
-    if (pathname === '/admin/login') {
+    if (routePath === '/admin/login') {
         return next();
     }
 
     // /api/admin/login e /api/admin/logout → pass through
-    if (pathname === '/api/admin/login' || pathname === '/api/admin/logout') {
+    if (routePath === '/api/admin/login' || routePath === '/api/admin/logout') {
         return next();
     }
 
@@ -115,7 +116,7 @@ code{background:#f1f5f9;padding:2px 8px;border-radius:6px;font-size:.875rem;colo
             });
         }
         // Páginas admin → redirect login
-        return context.redirect('/admin/login');
+        return context.redirect('/admin/login/');
     }
 
     return next();

@@ -11,7 +11,7 @@ const cookies = Object.fromEntries(
     })
 );
 const valid = await validateSession(cookies['admin_session']);
-if (valid) return Astro.redirect('/admin');
+if (valid) return Astro.redirect('/admin/');
 ---
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -68,14 +68,14 @@ if (valid) return Astro.redirect('/admin');
             errorEl.classList.add('hidden');
 
             try {
-                const res = await fetch('/api/admin/login', {
+                const res = await fetch('/api/admin/login/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ password })
                 });
                 const data = await res.json();
                 if (res.ok) {
-                    window.location.href = '/admin';
+                    window.location.href = '/admin/';
                 } else {
                     errorEl.textContent = data.error || 'Senha incorreta.';
                     errorEl.classList.remove('hidden');

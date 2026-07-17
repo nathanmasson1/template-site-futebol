@@ -103,7 +103,7 @@ export default function AdminNav({ activeSection = '', extraItems = [] }: AdminN
                     <span className="text-sm font-medium">Ver site</span>
                 </a>
                 <a
-                    href="/api/admin/logout"
+                    href="/api/admin/logout/"
                     className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all group"
                 >
                     <LogOut className="w-4 h-4 shrink-0 group-hover:text-red-500" />

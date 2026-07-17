@@ -23,7 +23,7 @@ function buildClearCookieHeaders() {
 
 function redirectResponse() {
     const headers = new Headers();
-    headers.set('Location', '/admin/login');
+    headers.set('Location', '/admin/login/');
     for (const cookie of buildClearCookieHeaders()) {
         headers.append('Set-Cookie', cookie);
     }
